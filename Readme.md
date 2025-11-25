@@ -1,76 +1,55 @@
-# Intro to Object Oriented Programming  
-## Module 1 – Assignment 1  
-### XYZ Bank ATM Program
+XYZ Bank – Assignment 1
 
-*Course:* Introduction to Object Oriented Programming  
-*Lecturer:* Doron Williams   
+Course:
+Introduction to Object Oriented Programming
+Lecturer: Doron Williams
 
-*Group Members*
+Group Members:
+Dain Thorpe
+Shanique Wisdom
+Joan Johnson-Brown
+Dante Graham
+Pasha Pinnock
 
-- Dain Thorpe  
-- Shanique Wisdom  
-- Joan Johnson-Brown  
-- Dante Graham  
-- Pasha Pinnock  
+Description:
+This project is Assignment 1 for the XYZ Bank ATM program. It is a simple C++ console application that allows a user to:
+1. Check account balance
+2. Deposit money
+3. Withdraw money
+4. Exit the program
 
----
+The application uses a while loop and switch statement to control the menu. It also uses a basic Account class to store and manage the balance.
 
-## Description
+Account Class:
+- Private data member:
+  balance (double)
 
-This project is a simple C++ console application that simulates an ATM system for *XYZ Bank*.
+- Constructor:
+  Account(double init_balance)
+  If init_balance is greater than or equal to 1000.00, the balance is set to that value.
+  Otherwise, the balance is set to 0 and a warning message is displayed.
 
-Users can:
+- Member functions:
+  deposit(double amount)
+    Adds amount to the balance if amount is greater than 0.
 
-1. Check their account balance  
-2. Deposit money  
-3. Withdraw money  
-4. Exit the program  
+  withdraw(double amount)
+    Subtracts amount from the balance if there are enough funds.
+    If amount is greater than the current balance, it displays:
+    "Debit amount exceeded account balance."
 
-The menu keeps running in a *while loop* until the user chooses the exit option.
+  getBalance() const
+    Returns the current balance.
 
----
+Menu and Flow:
+- The program asks the user for an initial balance and creates an Account object.
+- A while loop keeps the ATM menu running until the user chooses option 4 (Exit).
+- A switch statement handles each menu option:
+  1 -> Display balance
+  2 -> Prompt for a deposit amount and update balance
+  3 -> Prompt for a withdrawal amount and try to withdraw
+  4 -> Exit message
 
-## Account Class
-
-The program uses an Account class to represent a customer’s bank account, based on the UML diagram in the assignment:
-
-- Private attribute  
-  - balance: double  
-
-- Constructor  
-  - Account(double init_balance)  
-    - Validates that the initial balance is *>= 1000.00*  
-    - If not valid, sets balance to 0 and prints a warning message  
-
-- Member functions  
-  - double deposit(double amount)  
-    - Adds amount to the current balance (if amount > 0)  
-  - bool withdraw(double amount)  
-    - Withdraws amount if there is enough balance  
-    - If amount is greater than the balance, prints  
-      "Debit amount exceeded account balance."  
-  - double getBalance() const  
-    - Returns the current account balance  
-
----
-
-## Menu and Control Flow
-
-- The main program asks the user for an *initial balance*, then creates an Account object.
-- A *while loop* and *switch statement* are used to handle the menu options:
-  - Option 1 – Display current balance  
-  - Option 2 – Deposit money  
-  - Option 3 – Withdraw money  
-  - Option 4 – Exit the program  
-- Invalid menu choices are handled with an error message.
-
----
-
-## How to Compile and Run (MSYS2 / g++)
-
-From the folder that contains main.cpp:
-
-```bash
+How to Compile and Run (MSYS2 UCRT64):
 g++ -std=c++20 -Wall main.cpp -o atm.exe
-
 ./atm.exe
