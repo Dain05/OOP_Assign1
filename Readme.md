@@ -3,8 +3,7 @@
 ### XYZ Bank ATM Program
 
 *Course:* Introduction to Object Oriented Programming  
-*Lecturer:* Doron Williams  
-*Date:* November 1, 2025  
+*Lecturer:* Doron Williams   
 
 *Group Members*
 
@@ -73,4 +72,5 @@ From the folder that contains main.cpp:
 
 ```bash
 g++ -std=c++20 -Wall main.cpp -o atm.exe
+
 ./atm.exe
